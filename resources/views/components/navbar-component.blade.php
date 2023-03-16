@@ -29,7 +29,7 @@
     </ul>
     <div class="profileBx">
         <div class="profile-photo">
-            <img src="" class="photo">
+            <img src="" class="photo" alt="Photo">
         </div>
     </div>
 </nav>

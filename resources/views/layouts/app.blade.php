@@ -12,41 +12,7 @@
 <body>
   <section class="container">
     <header>
-      <nav class="navbar">
-        <div class="logoBx">
-          <span class="icon"></span>
-          <div class="searchBx">
-            <input type="text" class="field">
-          </div>
-        </div>
-        <ul class="navigationBx">
-          <li class="list active">
-            <a href="#" class='link'>
-              <span class="icon"></span>
-            </a>
-          </li>
-          <li class="list">
-            <a href="#" class='link'>
-              <span class="icon"></span>
-            </a>
-          </li>
-          <li class="list">
-            <a href="#" class='link'>
-              <span class="icon"></span>
-            </a>
-          </li>
-          <li class="list">
-            <a href="#" class='link'>
-              <span class="icon"></span>
-            </a>
-          </li>
-        </ul>
-        <div class="profileBx">
-          <div class="profile-photo">
-            <img src="" class="photo">
-          </div>
-        </div>
-      </nav>
+      <x-navbar />
     </header>
     <nav class="activitiesBx">
       <ul class="activities">
@@ -95,7 +61,7 @@
       </ul>
     </nav>
     <main class="contentBx">
-
+      @yield('content')
     </main>
   </section>
   @stack('js')
