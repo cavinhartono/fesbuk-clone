@@ -1,0 +1,11 @@
+:root {
+    --reguler: 18px;
+    --medium: 24px;
+    --large: 32px;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url();
+    font-weight: 500;
+}

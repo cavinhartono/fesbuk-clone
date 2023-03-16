@@ -1,0 +1,339 @@
+:root {
+    --reguler: 18px;
+    --medium: 24px;
+    --large: 32px;
+    --white-100: #fff;
+    --white-200: #f7f7f7;
+    --black-100: #222;
+    --black-200: #222222bf;
+    --black-300: #2222221a;
+    --black-400: #2c3333;
+    --green-100: #e7f6f2;
+    --green-200: #a5c9ca;
+    --green-300: #395b64;
+    --blue-100: #dfe3ee;
+    --blue-200: #aac4ff;
+    --blue-300: #3b5998;
+    --blue-400: #8fbdd3;
+    --bx-primary: -8px -8px 45px rgba(255, 255, 255, 1),
+        8px 8px 45px rgba(0, 0, 0, 0.1);
+    --bx-secondary: 0px 8px 45px rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(/public/assets/font/poppins/Poppins-Light.ttf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(/public/assets/font/poppins/Poppins-Medium.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(/public/assets/font/poppins/Poppins-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(/public/assets/font/poppins/Poppins-SemiBold.ttf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(/public/assets/font/poppins/Poppins-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(/public/assets/font/poppins/Poppins-ExtraBold.ttf);
+    font-weight: 800;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    background: var(--white-200);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white-100);
+    z-index: 5;
+}
+
+.header .navigationBx {
+    position: relative;
+    display: flex;
+    gap: 25px;
+}
+
+.header .navigationBx .list {
+    position: relative;
+    list-style: none;
+}
+
+.header .navigationBx .list.active::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    border-radius: 8px;
+    background: var(--blue-300);
+}
+
+.header .navigationBx .list .link {
+    text-decoration: none;
+    color: transparent;
+    stroke-width: 0.8px;
+    stroke: var(--black-200);
+}
+
+.header .navigationBx .list.active .link {
+    color: var(--blue-300);
+    stroke-width: 0px;
+    stroke: transparent;
+}
+
+.header .logoBx {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header .logoBx .icon {
+    display: flex;
+    align-items: center;
+}
+
+.header .logoBx .icon {
+    color: var(--blue-300);
+}
+
+.header .searchBx {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.searchBx .fieldBx {
+    position: relative;
+    width: 0;
+    background: #fff;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.fieldBx .field {
+    outline: none;
+    border: 1px solid #ddd;
+    position: relative;
+    width: 100%;
+    padding: 5px 10px;
+    padding-left: 45px;
+    font-size: 1em;
+    color: var(--black-200);
+    border-radius: 24px;
+}
+
+.searchBx.active .fieldBx {
+    width: 300px;
+}
+
+.searchBx .iconBx {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    color: var(--black-200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.searchBx.active .iconBx {
+    left: 10px;
+}
+
+.header .profileBx .profile-photo {
+    width: 48px;
+    height: 48px;
+}
+
+.header .profileBx .profile-photo .photo {
+    max-height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+
+.activitiesBx {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    padding: 20px;
+    background: var(--white-200);
+    margin-top: 80px;
+}
+
+.activities {
+    list-style-type: none;
+    padding-left: 80px;
+    position: relative;
+    display: grid;
+    gap: 15px;
+}
+
+.activities .list .link {
+    text-decoration: none;
+    position: relative;
+    display: inline-flex;
+    column-gap: 15px;
+    align-items: center;
+    color: var(--black-200);
+}
+
+.activities .list .link .icon {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    color: var(--black-300);
+}
+
+.activities .list .link .icon .photo {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+
+.contentBx {
+    margin-top: 80px;
+    position: relative;
+    width: 600px;
+    border-radius: 12px;
+}
+
+.cardBx {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card-content {
+    position: relative;
+    background: #fff;
+}
+
+.card-image .photo {
+    max-width: 100%;
+}
+
+.profile-card {
+    padding: 15px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profileBx {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profileBx .name-card .name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profileBx .name-card .datetime {
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.profile-card .photo {
+    max-width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+.profile-card .menuBx {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card .menuBx span {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--black-100);
+}
+
+.profile-card .menuBx span:nth-child(1) {
+    transform: translateY(-8px);
+}
+
+.profile-card .menuBx span:nth-child(3) {
+    transform: translateY(8px);
+}
+
+.react-card {
+    position: relative;
+    padding: 15px 20px;
+    width: 100%;
+}
+
+.react-card .react {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.react-card .react .likeBx {
+    position: relative;
+    display: flex;
+    gap: 8px;
+}
