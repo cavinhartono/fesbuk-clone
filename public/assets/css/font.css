@@ -1,11 +1,24 @@
 :root {
-    --reguler: 18px;
-    --medium: 24px;
-    --large: 32px;
+    --small: 0.75rem;
+    --reguler: 1rem;
+    --medium: 1.5rem;
+    --large: 2rem;
+    --superLarge: 2.5rem;
 }
 
 @font-face {
-    font-family: Poppins;
+    font-family: "Poppins";
     src: url();
     font-weight: 500;
+}
+
+.subtitle {
+    font-size: var(--medium);
+    line-height: var(--superLarge);
+    font-weight: 500;
+}
+
+.title {
+    font-size: var(--large);
+    font-weight: 700;
 }

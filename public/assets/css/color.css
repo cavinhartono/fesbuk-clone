@@ -1,15 +1,20 @@
 :root {
-    --white-100: #fff;
-    --white-200: #f7f7f7;
-    --black-100: #222;
-    --black-200: #222222bf;
-    --black-300: #2222221a;
-    --black-400: #2c3333;
-    --green-100: #e7f6f2;
-    --green-200: #a5c9ca;
-    --green-300: #395b64;
-    --blue-100: #dfe3ee;
-    --blue-200: #aac4ff;
-    --blue-300: #3b5998;
-    --blue-400: #8fbdd3;
+    --white-100: hsl(0, 0%, 100%);
+    --white-200: hsl(0, 0%, 97%);
+    --black-100: hsl(0, 0%, 13%);
+    --black-200: hsla(0, 0%, 13%, 0.75);
+    --black-300: hsla(0, 0%, 13%, 0.1);
+    --black-400: hsl(180, 7%, 19%);
+    --green-100: hsl(164, 45%, 94%);
+    --green-200: hsl(182, 26%, 72%);
+    --green-300: hsl(193, 27%, 31%);
+    --green-400: hsl(171, 93%, 32%);
+    --blue-100: hsl(224, 31%, 90%);
+    --blue-200: hsl(222, 100%, 83%);
+    --blue-300: hsl(221, 44%, 41%);
+    --blue-400: hsl(199, 44%, 69%);
+    --red-100: hsl(344, 99%, 62%);
+    --boxShadow-100: 0px 8px 45px var(--black-300);
+    --boxShadow-200: 8px 8px 45px var(--white-100),
+        -8px -8px 45px var(--black-300);
 }
