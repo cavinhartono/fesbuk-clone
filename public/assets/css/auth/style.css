@@ -20,21 +20,23 @@
 }
 
 .option {
-    height: 100px;
+    position: relative;
+    padding: var(--medium);
+    background: var(--white-100);
+    border: 1px solid var(--blue-300);
+    border-radius: 8px;
 }
 
-.option [type="radio"] {
-    display: none;
+.option ~ .input:checked {
+    background: var(--blue-300);
+}
+
+.option .input {
+    width: 32px;
 }
 
 .option label {
-    padding: var(--medium);
-    width: 100%;
-    position: relative;
-    background: var(--white-100);
     color: var(--blue-300);
-    border: 1px solid var(--blue-300);
-    border-radius: 8px;
 }
 
 .option input:checked {
