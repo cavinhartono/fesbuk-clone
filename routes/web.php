@@ -19,6 +19,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/login/check', 'check');
     Route::get('/register', 'register');
     Route::post('/register/check', 'store');
+    Route::get('/logout', 'logout');
 });
 
 Route::middleware('IsLogin')->group(function () {
