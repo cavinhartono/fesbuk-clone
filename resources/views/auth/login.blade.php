@@ -61,6 +61,17 @@
       </form>
     </div>
   </div>
+  <script>
+    const passwordField = document.querySelector('.input[type="password"]');
+    document.querySelector('#eye').addEventListener('click', function() {
+      if (passwordField.type === 'password') {
+        passwordField.type = "text";
+      } else {
+        passwordField.type = "password";
+      }
+      document.querySelector('#eye').classList.toggle('active');
+    })
+  </script>
 </body>
 
 </html>

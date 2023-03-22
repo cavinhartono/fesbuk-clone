@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,7 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::middleware('IsLogin')->group(function () {
-    Route::controller()->group(function () {
+    Route::controller(DashboardController::class)->group(function () {
+        Route::get('/', 'index');
     });
 });

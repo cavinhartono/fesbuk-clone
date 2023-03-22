@@ -42,3 +42,25 @@
 .option input:checked {
     background: var(--blue-300);
 }
+
+.password {
+    position: relative;
+}
+
+#eye {
+    position: absolute;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    padding: var(--medium) var(--large);
+    color: transparent;
+    stroke: var(--black-100);
+    stroke-width: 12px;
+    cursor: pointer;
+}
+
+#eye.active {
+    stroke-width: 0;
+    stroke: none;
+    color: var(--black-100);
+}

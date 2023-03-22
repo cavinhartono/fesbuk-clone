@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/assets/css/auth/style.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/auth/style.css') }}" />
     <title>Register</title>
 </head>
 
@@ -57,7 +57,12 @@
                         <label for="password">Password</label>
                         <div class="password">
                             <input type="password" id="password" name="password" class="input" placeholder="Minimal 8 karakter" />
-                            <span class="icon"></span>
+                            <span class="icon" id="eye">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="auto" height="auto" viewBox="0 0 512 512">
+                                    <circle cx="256" cy="256" r="64" />
+                                    <path d="M490.84,238.6c-26.46-40.92-60.79-75.68-99.27-100.53C349,110.55,302,96,255.66,96c-42.52,0-84.33,12.15-124.27,36.11C90.66,156.54,53.76,192.23,21.71,238.18a31.92,31.92,0,0,0-.64,35.54c26.41,41.33,60.4,76.14,98.28,100.65C162,402,207.9,416,255.66,416c46.71,0,93.81-14.43,136.2-41.72,38.46-24.77,72.72-59.66,99.08-100.92A32.2,32.2,0,0,0,490.84,238.6ZM256,352a96,96,0,1,1,96-96A96.11,96.11,0,0,1,256,352Z" />
+                                </svg>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -82,6 +87,17 @@
             </form>
         </div>
     </div>
+    <script>
+        const passwordField = document.querySelector('.input[type="password"]');
+        document.querySelector('#eye').addEventListener('click', () => {
+            if (passwordField.type === 'password') {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+            document.querySelector('#eye').classList.toggle('active');
+        })
+    </script>
 </body>
 
 </html>

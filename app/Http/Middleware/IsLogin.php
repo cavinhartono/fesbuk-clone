@@ -25,6 +25,6 @@ class IsLogin
             User::where('id', Auth::user()->id)->update(['last_seen' => now()]);
             return $next($request);
         }
-        return redirect('/auth');
+        return redirect('/login');
     }
 }
