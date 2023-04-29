@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,16 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::controller(AuthController::class)->group(function () {
-    Route::get('/login', 'login');
-    Route::post('/login/check', 'check');
-    Route::get('/register', 'register');
-    Route::post('/register/check', 'store');
-    Route::get('/logout', 'logout');
+Route::get('/', function () {
+    return Inertia::render('Posts');
 });
 
-Route::middleware('IsLogin')->group(function () {
-    Route::controller(DashboardController::class)->group(function () {
-        Route::get('/', 'index');
-    });
-});
+require __DIR__ . '/auth.php';
