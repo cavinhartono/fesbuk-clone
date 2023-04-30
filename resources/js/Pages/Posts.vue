@@ -5,5 +5,7 @@ import { Head } from "@inertiajs/inertia-vue3";
 
 <template>
     <Head title="Posts" />
-    <Navbar />
+    <div class="container relative flex items-center">
+        <Navbar />
+    </div>
 </template>
