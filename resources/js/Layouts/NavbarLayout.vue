@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { Link, usePage } from "@inertiajs/inertia-vue3";
 import Header from "@/components/Header.vue";
+import Navbar from "@/components/Navbar.vue";
 import Home from "vue-material-design-icons/Home.vue";
 import HomeOutline from "vue-material-design-icons/HomeOutline.vue";
 import TelevisionPlay from "vue-material-design-icons/TelevisionPlay.vue";
@@ -24,4 +25,5 @@ let showMenu = ref(false);
 
 <template>
     <Header />
+    <Navbar />
 </template>
