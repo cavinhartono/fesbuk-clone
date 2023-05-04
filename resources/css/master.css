@@ -19,3 +19,9 @@
         8px 8px 45px rgba(0, 0, 0, 0.1);
     --bx-secondary: 0px 8px 45px rgba(0, 0, 0, 0.1);
 }
+
+svg {
+    width: inherit;
+    height: inherit;
+    color: inherit;
+}

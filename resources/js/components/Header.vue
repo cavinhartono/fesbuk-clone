@@ -1,20 +1,13 @@
 <script>
 import "../../css/master.css";
-const search = document.querySelector(".searchBx");
-
-function isSearch() {
-    search.classList.toggle("active");
-}
 </script>
 
 <template>
     <header class="header">
         <div class="logoBx">
-            <span class="icon">
+            <span class="icon w-8 h-8" style="var(--black-100)">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
                     fill="currentColor"
                     class="bi bi-facebook"
                     viewBox="0 0 16 16"
@@ -28,11 +21,12 @@ function isSearch() {
                 <div class="fieldBx">
                     <input type="text" class="field" />
                 </div>
-                <div class="iconBx" onclick="isSearch">
+                <div
+                    class="iconBx w-6 h-6"
+                    onclick="document.querySelector('.fieldBx').classList.toggle('active')"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
                         fill="currentColor"
                         class="bi bi-search"
                         viewBox="0 0 16 16"
@@ -47,11 +41,9 @@ function isSearch() {
         <ul class="navigationBx">
             <li class="list active">
                 <a href="#" class="link">
-                    <span class="icon"
+                    <span class="icon w-6 h-6"
                         ><svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
                             fill="currentColor"
                             class="bi bi-house-door-fill"
                             viewBox="0 0 16 16"
@@ -65,11 +57,9 @@ function isSearch() {
             </li>
             <li class="list">
                 <a href="#" class="link">
-                    <span class="icon">
+                    <span class="icon w-6 h-6">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
                             fill="currentColor"
                             class="bi bi-people-fill"
                             viewBox="0 0 16 16"
@@ -90,11 +80,9 @@ function isSearch() {
             </li>
             <li class="list">
                 <a href="#" class="link">
-                    <span class="icon"
+                    <span class="icon w-6 h-6"
                         ><svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
                             fill="currentColor"
                             class="bi bi-tv-fill"
                             viewBox="0 0 16 16"
@@ -108,11 +96,9 @@ function isSearch() {
             </li>
             <li class="list">
                 <a href="#" class="link">
-                    <span class="icon">
+                    <span class="icon w-6 h-6">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
                             fill="currentColor"
                             class="bi bi-bag-fill"
                             viewBox="0 0 16 16"
