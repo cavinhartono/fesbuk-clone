@@ -1,16 +1,27 @@
+<script>
+const list = document.querySelectorAll(".navigationBx .list");
+
+function getList() {
+    list.forEach((item) => item.classList.remove("active"));
+    this.classList.add("active");
+}
+
+list.forEach((item) => item.addEventListener("click", getList));
+</script>
+
 <template>
-    <nav class="fixed top-0 left-0 w-[300px] h-[100px] p-5 mt-[80px] bg-white">
-        <ul class="relative pl-[80px] grid gap-4">
-            <li>
-                <a href="" class="inline-flex gap-x-6 items-center text-black">
+    <nav class="activitiesBx">
+        <ul class="activities">
+            <li class="list">
+                <a href="" class="link">
                     <span class="icon">
                         <img src="/public/assets/img/photo.jpg" class="photo" />
                     </span>
                     <span class="title">Kevin</span>
                 </a>
             </li>
-            <li>
-                <a href="" class="inline-flex gap-x-6 items-center text-black">
+            <li class="list">
+                <a href="" class="link">
                     <span class="icon">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -35,8 +46,8 @@
                     <span class="title">Find The Friend</span>
                 </a>
             </li>
-            <li>
-                <a href="" class="inline-flex gap-x-6 items-center text-black">
+            <li class="list">
+                <a href="" class="link">
                     <span class="icon"
                         ><svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -57,8 +68,8 @@
                     <span class="title">Group</span>
                 </a>
             </li>
-            <li>
-                <a href="" class="inline-flex gap-x-6 items-center text-black">
+            <li class="list">
+                <a href="" class="link">
                     <span class="icon">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -76,8 +87,8 @@
                     <span class="title">Marketplace</span>
                 </a>
             </li>
-            <li>
-                <a href="" class="inline-flex gap-x-6 items-center text-black">
+            <li class="list">
+                <a href="" class="link">
                     <span class="icon">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -95,8 +106,8 @@
                     <span class="title">Memories</span>
                 </a>
             </li>
-            <li>
-                <a href="" class="inline-flex gap-x-6 items-center text-black">
+            <li class="list">
+                <a href="" class="link">
                     <span class="icon">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -114,8 +125,8 @@
                     <span class="title">Save</span>
                 </a>
             </li>
-            <li>
-                <a href="" class="inline-flex gap-x-6 items-center text-black">
+            <li class="list">
+                <a href="" class="link">
                     <span class="icon">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -136,3 +147,49 @@
         </ul>
     </nav>
 </template>
+
+<style scoped>
+.activitiesBx {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    padding: 20px;
+    background: var(--white-200);
+    margin-top: 80px;
+}
+
+.activities {
+    list-style-type: none;
+    padding-left: 80px;
+    position: relative;
+    display: grid;
+    gap: 15px;
+}
+
+.activities .list .link {
+    text-decoration: none;
+    position: relative;
+    display: inline-flex;
+    column-gap: 15px;
+    align-items: center;
+    color: var(--black-200);
+}
+
+.activities .list .link .icon {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    color: var(--black-300);
+}
+
+.activities .list .link .icon .photo {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+</style>

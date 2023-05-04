@@ -1,5 +1,10 @@
-<script setup>
+<script>
 import "../../css/master.css";
+const search = document.querySelector(".searchBx");
+
+function isSearch() {
+    search.classList.toggle("active");
+}
 </script>
 
 <template>
@@ -23,7 +28,7 @@ import "../../css/master.css";
                 <div class="fieldBx">
                     <input type="text" class="field" />
                 </div>
-                <div class="iconBx">
+                <div class="iconBx" onclick="isSearch">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
