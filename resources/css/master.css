@@ -20,6 +20,18 @@
     --bx-secondary: 0px 8px 45px rgba(0, 0, 0, 0.1);
 }
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--white-200);
+    color: var(--black-100);
+}
+
 svg {
     width: inherit;
     height: inherit;

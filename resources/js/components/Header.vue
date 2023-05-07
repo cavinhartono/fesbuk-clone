@@ -1,5 +1,14 @@
-<script>
+<script setup>
 import "../../css/master.css";
+
+document.querySelectorAll(".navigationBx .list").forEach((list) =>
+    list.addEventListener("click", () => {
+        document
+            .querySelectorAll(".navigationBx .list")
+            .forEach((item) => item.classList.remove("active"));
+        this.classList.add("active");
+    })
+);
 </script>
 
 <template>
@@ -147,7 +156,7 @@ import "../../css/master.css";
 .header .navigationBx .list.active::before {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -8px;
     left: 0;
     width: 24px;
     height: 2px;

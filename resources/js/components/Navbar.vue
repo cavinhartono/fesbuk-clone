@@ -1,14 +1,3 @@
-<script>
-const list = document.querySelectorAll(".navigationBx .list");
-
-function getList() {
-    list.forEach((item) => item.classList.remove("active"));
-    this.classList.add("active");
-}
-
-list.forEach((item) => item.addEventListener("click", getList));
-</script>
-
 <template>
     <nav class="activitiesBx">
         <ul class="activities">
