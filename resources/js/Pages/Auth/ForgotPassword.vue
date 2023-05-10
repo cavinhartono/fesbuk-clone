@@ -1,21 +1,21 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import { Head, useForm } from '@inertiajs/vue3';
+import GuestLayout from "@/Layouts/GuestLayout.vue";
+import InputError from "@/components/InputError.vue";
+import InputLabel from "@/components/InputLabel.vue";
+import PrimaryButton from "@/components/PrimaryButton.vue";
+import TextInput from "@/components/TextInput.vue";
+import { Head, useForm } from "@inertiajs/vue3";
 
 defineProps({
     status: String,
 });
 
 const form = useForm({
-    email: '',
+    email: "",
 });
 
 const submit = () => {
-    form.post(route('password.email'));
+    form.post(route("password.email"));
 };
 </script>
 
@@ -24,7 +24,8 @@ const submit = () => {
         <Head title="Forgot Password" />
 
         <div class="mb-4 text-lg text-gray-900 font-semibold">
-            Please enter your email address or mobile number to search for your account.
+            Please enter your email address or mobile number to search for your
+            account.
         </div>
 
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
@@ -48,7 +49,11 @@ const submit = () => {
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <PrimaryButton class="w-full" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <PrimaryButton
+                    class="w-full"
+                    :class="{ 'opacity-25': form.processing }"
+                    :disabled="form.processing"
+                >
                     Email Password Reset Link
                 </PrimaryButton>
             </div>

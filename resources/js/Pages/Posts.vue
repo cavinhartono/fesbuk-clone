@@ -1,8 +1,8 @@
 <script setup>
 import { Head, Link, usePage } from '@inertiajs/vue3';
 import MainNavLayout from '@/Layouts/MainNavLayout.vue';
-import CreatePostBox from '@/Components/CreatePostBox.vue';
-import Post from '@/Components/Post.vue';
+import CreatePostBox from '@/components/CreatePostBox.vue';
+import Post from '@/components/Post.vue';
 
 import Magnify from 'vue-material-design-icons/Magnify.vue'
 import TelevisionPlay from 'vue-material-design-icons/TelevisionPlay.vue'

@@ -1,9 +1,9 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
-import InputError from '@/Components/InputError.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import GuestLayout from "@/Layouts/GuestLayout.vue";
+import InputError from "@/components/InputError.vue";
+import PrimaryButton from "@/components/PrimaryButton.vue";
+import TextInput from "@/components/TextInput.vue";
+import { Head, Link, useForm } from "@inertiajs/vue3";
 
 defineProps({
     canResetPassword: Boolean,
@@ -11,14 +11,14 @@ defineProps({
 });
 
 const form = useForm({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
     remember: false,
 });
 
 const submit = () => {
-    form.post(route('login'), {
-        onFinish: () => form.reset('password'),
+    form.post(route("login"), {
+        onFinish: () => form.reset("password"),
     });
 };
 </script>
@@ -58,7 +58,11 @@ const submit = () => {
             </div>
 
             <div class="flex items-center justify-center pt-4">
-                <PrimaryButton class="w-full" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <PrimaryButton
+                    class="w-full"
+                    :class="{ 'opacity-25': form.processing }"
+                    :disabled="form.processing"
+                >
                     Log in
                 </PrimaryButton>
             </div>
@@ -74,7 +78,10 @@ const submit = () => {
             </div>
             <div class="border-b border-b-gray-200"></div>
             <div class="flex items-center justify-center pt-6 pb-2">
-                <Link :href="route('register')" class="px-5 py-3 text-white bg-[#42B729] hover:bg-[#37A621] text-[20px] font-bold rounded-lg">
+                <Link
+                    :href="route('register')"
+                    class="px-5 py-3 text-white bg-[#42B729] hover:bg-[#37A621] text-[20px] font-bold rounded-lg"
+                >
                     Create new account
                 </Link>
             </div>

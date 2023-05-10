@@ -4,7 +4,7 @@ import { Link, usePage } from "@inertiajs/inertia-vue3";
 import Header from "@/components/Header.vue";
 import Navbar from "@/components/Navbar.vue";
 
-import { useGeneralStore } from "@/stores/index";
+import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
 const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(
     useGeneralStore()
