@@ -18,9 +18,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', [PostController::class, 'index'])->name('posts.index');
-    Route::post('/post', [PostController::class, 'store'])->name('post.store');
-    Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
+    Route::controller(PostController::class)->group(function () {
+        Route::get('/', 'index')->name('posts.index');
+        Route::post('/post', 'store')->name('post.store');
+        Route::delete('/post/{id}', 'destroy')->name('post.destroy');
+    });
 
     Route::post('/comment', [CommentController::class, 'store'])->name('comment.store');
     Route::delete('/comment/{id}', [CommentController::class, 'destroy'])->name('comment.destroy');
@@ -28,9 +30,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/{id}', [UserController::class, 'show'])->name('user.show');
     Route::post('/user/update-image', [UserController::class, 'updateImage'])->name('user.updateImage');
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::controller(ProfileController::class)->group(function () {
+        Route::get('/profile', 'edit')->name('profile.edit');
+        Route::patch('/profile', 'update')->name('profile.update');
+        Route::delete('/profile', 'destroy')->name('profile.destroy');
+    });
 });
 
 require __DIR__ . '/auth.php';
