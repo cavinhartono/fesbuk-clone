@@ -32,12 +32,12 @@ let showMenu = ref(false);
 <template>
     <div
         id="MainNav"
-        class="fixed z-50 w-full flex items-center justify-between h-[56px] bg-white shadow-xl border-b"
+        class="fixed z-50 w-full flex items-center justify-between p-[20px] h-[50px] bg-white shadow-xl border-b"
     >
         <div id="NavLeft" class="flex items-center justify-start w-[260px]">
             <Link :href="route('posts.index')" class="pl-3 min-w-[55px]">
                 <img
-                    class="w-[40px]"
+                    class="w-[40px] grayscale"
                     src="/images/icons/FacebookLogoCircle.png"
                 />
             </Link>

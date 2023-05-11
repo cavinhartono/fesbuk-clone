@@ -208,7 +208,9 @@ defineProps({ posts: Object, user: Object });
                     <CreatePostBox
                         v-if="$page.props.auth.user.id === user.id"
                         :image="user.image"
-                        :placeholder="'What\'s on your mind ' + user.name"
+                        :placeholder="`What's on your mind, ${
+                            user.name.split(' ')[0]
+                        }?`"
                     />
 
                     <div v-for="post in posts.data" :key="post">
