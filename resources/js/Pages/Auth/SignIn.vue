@@ -1,15 +1,28 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
-import "../../../../public/assets/css/color.css";
+import { Head, Link, useForm } from "@inertiajs/vue3";
+
+defineProps({
+    canResetPassword: Boolean,
+    status: String,
+});
+
+const form = useForm({
+    email: "",
+    password: "",
+    remember: false,
+});
+
+const submit = () => {
+    form.post(route("login"), {
+        onFinish: () => form.reset("password"),
+    });
+};
 </script>
 
 <template>
     <Head title="Sign In" />
     <div class="min-h-screen flex justify-between gap-[50px] p-6">
-        <div
-            class="w-[600px] p-6 rounded-3xl"
-            style="background: var(--blue-300)"
-        >
+        <div class="w-[600px] p-6 rounded-3xl bg-blue-500">
             <div class="text-white flex justify-start items-center">
                 <span class="w-6 h-6 mr-2">
                     <svg
@@ -28,7 +41,7 @@ import "../../../../public/assets/css/color.css";
             </div>
             <div class="py-6 h-[524px] text-white">
                 <h2 class="text-3xl font-bold">Bergabunglah dengan Facebook</h2>
-                <p class="text-xl font-semibold my-[0.75rem] opacity-75">
+                <p class="text-lg font-medium my-[0.75rem] opacity-75">
                     Kami akan membantu Anda untuk membuat akun baru dengan
                     beberapa langkah mudah.
                 </p>
@@ -37,44 +50,70 @@ import "../../../../public/assets/css/color.css";
                 &copy; 2023 Facebook Clone | Cavin Hartono Putra
             </div>
         </div>
-        <div style="width: calc(100% - 600px)">
-            <div class="label">
-                <h2 class="title">Masuk Akun</h2>
-                <h2 class="subtitle">
+        <div class="py-6" style="width: calc(100% - 600px)">
+            <div>
+                <h2 class="text-3xl font-bold text-black-500">Masuk Akun</h2>
+                <h2 class="text-lg font-medium text-black-500 opacity-75">
                     Jika Anda tidak mempunyai akun?
-                    <a href="/register" class="link">Buat Akun.</a>
+                    <Link
+                        :href="route('register')"
+                        class="underline text-blue-500"
+                    >
+                        Buat Akun.
+                    </Link>
                 </h2>
             </div>
-            <form action="/login/check" class="form px-medium">
-                <div class="field">
-                    <div class="input-form">
-                        <label for="email">Email</label>
+            <form @submit.prevent="submit" class="py-6">
+                <div class="w-full">
+                    <div class="w-full">
+                        <label for="email" class="text-black-500">Email</label>
                         <input
                             type="email"
                             id="email"
                             name="email"
-                            class="input"
+                            class="outline-none my-3 w-full border-solid border-black-50 p-4 rounded transparent"
+                            v-model="form.email"
                             placeholder="mark@example.com"
+                            required
+                            autofocus
+                            autocomplete="name"
                         />
                     </div>
                 </div>
-                <div class="field">
-                    <div class="input-form">
-                        <label for="password">Password</label>
+                <div class="w-full">
+                    <div class="w-full">
+                        <label for="password" class="text-black-500">
+                            Password
+                        </label>
                         <div class="password">
                             <input
                                 type="password"
                                 id="password"
                                 name="password"
-                                class="input"
+                                v-model="form.password"
+                                class="outline-none my-3 w-full border-solid border-black-50 p-4 rounded transparent"
+                                required
+                                autofocus
                                 placeholder="Minimal 8 karakter"
                             />
+                            <!-- Show Password -->
                             <span class="icon"></span>
                         </div>
                     </div>
                 </div>
-                <div class="field">
-                    <button class="btn success">Masuk</button>
+                <div class="w-full">
+                    <button
+                        class="w-full px-4 py-6 my-3 rounded text-white bg-green-500"
+                    >
+                        Masuk
+                    </button>
+                    <Link
+                        v-if="canResetPassword"
+                        :href="route('password.request')"
+                        class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                        Lupa password
+                    </Link>
                 </div>
             </form>
         </div>
